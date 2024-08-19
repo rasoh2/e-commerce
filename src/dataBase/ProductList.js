@@ -12,7 +12,7 @@ const ProductList = [
       "https://res.cloudinary.com/djx6viedj/image/upload/t_trimmed_square_512/et8qbl35rz490v43a7sunriqtcfv?_a=BACCd2Ev",
     description: "Audífonos Bluetooth duración max. 24 hrs.",
     price: "29000",
-    stock: "10",
+    stock: "1",
   },
   {
     id: 2,

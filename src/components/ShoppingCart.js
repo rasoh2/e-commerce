@@ -32,9 +32,27 @@ class ShoppingCart extends React.Component {
       currency: "CLP",
     }).format(total);
   }
+  // removeFromCart(productId) {
+  //   this.setState((prevState) => {
+  //     const updatedCartList = prevState.cartList.filter(
+  //       (product) => product.id !== productId
+  //     );
+  //     const updatedProductStock = { ...prevState.ProductStock };
+  //     const removedProduct = prevState.cartList.find(
+  //       (product) => product.id === productId
+  //     );
+  //     if (removedProduct) {
+  //       updatedProductStock[productId] += 1;
+  //     }
 
+  //     return {
+  //       cartList: updatedCartList,
+  //       ProductStock: updatedProductStock,
+  //     };
+  //   });
+  // }
   render() {
-    const { cartList } = this.props;
+    const { cartList, removeFromCart } = this.props;
     return (
       <>
         <Button id='Popover1' color='info' onClick={this.toggle}>
@@ -55,6 +73,7 @@ class ShoppingCart extends React.Component {
                   <th>#</th>
                   <th>Producto</th>
                   <th>Precio</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -63,6 +82,16 @@ class ShoppingCart extends React.Component {
                     <th>{index + 1}</th>
                     <td>{item.title}</td>
                     <td>{item.price}</td>
+                    <td>
+                      <Button
+                        color='danger'
+                        size='sm'
+                        onClick={() => removeFromCart(item.id)}
+                        outline
+                      >
+                        <span className='material-icons'>cancel</span>
+                      </Button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -70,6 +99,7 @@ class ShoppingCart extends React.Component {
                 <td>
                   <b>Total</b>
                 </td>
+                <td></td>
                 <td>
                   <b>{this.totalAdd()}</b>
                 </td>
