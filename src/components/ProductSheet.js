@@ -26,22 +26,19 @@ class ProductSheet extends React.Component {
     }));
   }
   addCart() {
-    const product = {
-      titulo: this.props.title,
-      precio: this.props.price,
-    };
+    const { id, title, price } = this.props;
+    const product = { id, title, price };
     this.props.addCart(product);
     this.toggle();
-    // this.setState((prevState) => ({
-    //   modal: !prevState.modal,
-    // }));
   }
 
   render() {
-    const { id, title, image, description, price, stock } = this.props;
+    const { title, image, description, price, stock } = this.props;
     return (
       <Container>
-        <Button onClick={this.toggle}>Ver ficha</Button>
+        <div className='d-flex justify-content-center align-items-center'>
+          <Button onClick={this.toggle}>Ver ficha</Button>
+        </div>
         <Modal isOpen={this.state.modal}>
           <ModalHeader>{title}</ModalHeader>
           <ModalBody>

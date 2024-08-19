@@ -3,6 +3,16 @@
   margin-top: 0.5rem;
 }
 .Card {
+  width: 100%;
   margin-left: 1rem;
   margin-top: 1rem;
+  min-height: 31rem;
+}
+
+.CardImg {
+  width: auto;
+
+  object-fit: cover;
+  object-fit: contain;
+  height: auto;
 }

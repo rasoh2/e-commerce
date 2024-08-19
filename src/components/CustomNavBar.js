@@ -9,7 +9,7 @@ class CustomNavBar extends React.Component {
         <NavbarBrand href='/'>Compras con React</NavbarBrand>
         <Nav className='ml-auto'>
           <NavItem>
-            <ShoppingCart CartList={this.props.CartList} />
+            <ShoppingCart cartList={this.props.cartList} />
           </NavItem>
         </Nav>
       </Navbar>

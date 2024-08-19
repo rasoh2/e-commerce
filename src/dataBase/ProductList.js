@@ -11,7 +11,7 @@ const ProductList = [
     image:
       "https://res.cloudinary.com/djx6viedj/image/upload/t_trimmed_square_512/et8qbl35rz490v43a7sunriqtcfv?_a=BACCd2Ev",
     description: "Audífonos Bluetooth duración max. 24 hrs.",
-    price: "29.000",
+    price: "29000",
     stock: "10",
   },
   {
@@ -20,7 +20,7 @@ const ProductList = [
     image:
       "https://home.ripley.cl/store/Attachment/WOP/D345/2000395271052/2000395271052_2.jpg",
     description: "Pendrive de almacenamiento capacidad 1 TB",
-    price: "19.000",
+    price: "19000",
     stock: "10",
   },
   {
@@ -29,7 +29,7 @@ const ProductList = [
     image:
       "https://http2.mlstatic.com/D_NQ_NP_2X_987221-MLA51243077077_082022-F.webp",
     description: "Pendrive de almacenamiento capacidad 1 TB",
-    price: "29.000",
+    price: "29000",
     stock: "10",
   },
   {
@@ -37,9 +37,8 @@ const ProductList = [
     title: "Teclado mecánico",
     image:
       "https://http2.mlstatic.com/D_NQ_NP_2X_894910-MLA45315449297_032021-F.webp",
-    description:
-      "Este teclado HP de alto rendimiento mejora la experiencia de gaming, permitiendo horas ilimitadas de juego. Diseñado para expresar habilidades y estilo, es ideal tanto para aficionados como para expertos, elevando las jugadas a otro nivel.",
-    price: "20.000",
+    description: "Este teclado HP de alto rendimiento retroiluminado.",
+    price: "20000",
     stock: "10",
   },
 ];

@@ -1,2 +1,2 @@
-const CartList = [{}];
-export default CartList;
+const cartList = [{}];
+export default cartList;

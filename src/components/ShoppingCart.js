@@ -21,13 +21,25 @@ class ShoppingCart extends React.Component {
       PopoverOpen: !prevState.PopoverOpen,
     }));
   }
+
+  totalAdd() {
+    const total = this.props.cartList.reduce(
+      (total, item) => total + parseInt(item.price, 10),
+      0
+    );
+    return new Intl.NumberFormat("es-CL", {
+      style: "currency",
+      currency: "CLP",
+    }).format(total);
+  }
+
   render() {
-    const { CartList } = this.props;
+    const { cartList } = this.props;
     return (
       <>
         <Button id='Popover1' color='info' onClick={this.toggle}>
           <span className='material-icons'>shopping_cart</span>
-          <Badge color='secondary'>{CartList.length}</Badge>
+          <Badge color='secondary'>{cartList.length}</Badge>
         </Button>
         <Popover
           placement='bottom'
@@ -46,14 +58,25 @@ class ShoppingCart extends React.Component {
                 </tr>
               </thead>
               <tbody>
-                {CartList.map((item, index) => (
+                {cartList.map((item, index) => (
                   <tr key={index}>
                     <th>{index + 1}</th>
-                    <td>{item.titulo}</td>
-                    <td>{item.precio}</td>
+                    <td>{item.title}</td>
+                    <td>{item.price}</td>
                   </tr>
                 ))}
               </tbody>
+              <tfoot>
+                <td>
+                  <b>Total</b>
+                </td>
+                <td>
+                  <b>{this.totalAdd()}</b>
+                </td>
+                <td>
+                  <Button href='/'>Pagar</Button>
+                </td>
+              </tfoot>
             </Table>
           </PopoverBody>
         </Popover>

@@ -16,10 +16,19 @@ class Product extends React.Component {
   render() {
     const { image, title, price, description, stock, addCart } = this.props;
     return (
-      <Col xs='12' sm='6' md='4' lg='3' className='mb-4'>
-        <Card className='Card' body outline color='primary'>
-          <CardImg src={image} />
-          <CardBody>
+      <Col xs='12' sm='6' md='4' lg='3' className='mb-4 '>
+        <Card
+          className='Card d-flex space-between'
+          body
+          outline
+          color='primary'
+        >
+          <CardImg
+            className='CardImg'
+            src={image}
+            style={{ height: "200px" }}
+          />
+          <CardBody className='d-flex flex-column justify-content-between'>
             <CardTitle> {title} </CardTitle>
             <CardSubtitle>
               Valor <b>${price}</b>
@@ -32,6 +41,7 @@ class Product extends React.Component {
               price={price}
               stock={stock}
               addCart={addCart}
+              id={this.props.id}
             />
           </CardBody>
         </Card>
