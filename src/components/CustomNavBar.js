@@ -1,16 +1,15 @@
 import React from "react";
-import { NavItem, NavLink, Nav, NavbarBrand, Navbar } from "reactstrap";
+import { NavItem, Nav, NavbarBrand, Navbar } from "reactstrap";
 import ShoppingCart from "./ShoppingCart";
 
 class CustomNavBar extends React.Component {
   render() {
     return (
       <Navbar color='light' light expand='xl'>
-        <NavbarBrand href='/'>{this.props.title}</NavbarBrand>
-        <div>Compras con React</div>
-        <Nav className='ml-auto' navbar>
+        <NavbarBrand href='/'>Compras con React</NavbarBrand>
+        <Nav className='ml-auto'>
           <NavItem>
-            <ShoppingCart />
+            <ShoppingCart CartList={this.props.CartList} />
           </NavItem>
         </Nav>
       </Navbar>

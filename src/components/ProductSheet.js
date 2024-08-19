@@ -9,14 +9,12 @@ import {
   Container,
 } from "reactstrap";
 import "./ProductSheet.css";
-import CartList from "../CartList";
 
 class ProductSheet extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       modal: false,
-      CartList,
     };
     this.toggle = this.toggle.bind(this);
     this.addCart = this.addCart.bind(this);
@@ -28,13 +26,15 @@ class ProductSheet extends React.Component {
     }));
   }
   addCart() {
-    CartList.push({
-      titulo: this.props.props.title,
-      precio: this.props.props.price,
-    });
-    this.setState((prevState) => ({
-      modal: !prevState.modal,
-    }));
+    const product = {
+      titulo: this.props.title,
+      precio: this.props.price,
+    };
+    this.props.addCart(product);
+    this.toggle();
+    // this.setState((prevState) => ({
+    //   modal: !prevState.modal,
+    // }));
   }
 
   render() {

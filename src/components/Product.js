@@ -14,7 +14,7 @@ import ProductSheet from "./ProductSheet.js";
 
 class Product extends React.Component {
   render() {
-    const { image, title, price, description, stock } = this.props;
+    const { image, title, price, description, stock, addCart } = this.props;
     return (
       <Col xs='12' sm='6' md='4' lg='3' className='mb-4'>
         <Card className='Card' body outline color='primary'>
@@ -31,6 +31,7 @@ class Product extends React.Component {
               description={description}
               price={price}
               stock={stock}
+              addCart={addCart}
             />
           </CardBody>
         </Card>

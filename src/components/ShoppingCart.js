@@ -7,14 +7,12 @@ import {
   Badge,
   Button,
 } from "reactstrap";
-import CarList from "../CartList";
 
 class ShoppingCart extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       PopoverOpen: false,
-      CarList,
     };
     this.toggle = this.toggle.bind(this);
   }
@@ -24,11 +22,12 @@ class ShoppingCart extends React.Component {
     }));
   }
   render() {
+    const { CartList } = this.props;
     return (
       <>
-        <Button id='Popover1' color='info'>
+        <Button id='Popover1' color='info' onClick={this.toggle}>
           <span className='material-icons'>shopping_cart</span>
-          <Badge color='secondary'>0</Badge>
+          <Badge color='secondary'>{CartList.length}</Badge>
         </Button>
         <Popover
           placement='bottom'
@@ -36,7 +35,7 @@ class ShoppingCart extends React.Component {
           target='Popover1'
           toggle={this.toggle}
         >
-          <PopoverHeader></PopoverHeader>
+          <PopoverHeader>Carrito de Compras</PopoverHeader>
           <PopoverBody>
             <Table>
               <thead>
@@ -46,7 +45,15 @@ class ShoppingCart extends React.Component {
                   <th>Precio</th>
                 </tr>
               </thead>
-              <tbody>{CarList}</tbody>
+              <tbody>
+                {CartList.map((item, index) => (
+                  <tr key={index}>
+                    <th>{index + 1}</th>
+                    <td>{item.titulo}</td>
+                    <td>{item.precio}</td>
+                  </tr>
+                ))}
+              </tbody>
             </Table>
           </PopoverBody>
         </Popover>
